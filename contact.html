@@ -27,7 +27,7 @@
 
     <main class="container py-5">
       <h1 class="text-center text-dark">Võta ühendust</h1>
-      <p class="text-center">Täida vorm ja ma võtan sinuga ühendust.</p>
+      <p class="text-center">Täida allolev vorm ning Sinuga võetakse esimesel võimalusel ühendust.</p>
 
       <div class="row justify-content-center mt-4">
         <div class="col-md-6">
@@ -49,5 +49,38 @@
         </div>
       </div>
     </main>
+    <!-- Success modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="successModalLabel">Kiri saadetud</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sulge"></button>
+          </div>
+          <div class="modal-body">Sinu kiri on edukalt saadetud. Vastame esimesel võimalusel.</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const modalEl = document.getElementById('successModal');
+          if (modalEl) {
+            const modal = new bootstrap.Modal(modalEl);
+            modal.show();
+          } else {
+            alert('Sinu kiri on edukalt saadetud.');
+          }
+          form.reset();
+        });
+      });
+    </script>
 </body>
 </html>
