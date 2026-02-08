@@ -1,5 +1,15 @@
-# webpage project
+# Minu Veeb - Personal Portfolio
 
-Small & Simple webpage project
+A responsive personal portfolio website with multiple pages and contact form.
+
+## Pages
+
+- **index.html** - Home page with hero section (bar at the top)
+- **info.html** - Services and information page
+- **contact.html** - Contact form with modal confirmation
+
+## Getting Started
+
+Open `index.html` in a browser to view the site.
 
 
